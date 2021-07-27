@@ -12,7 +12,6 @@ def get_guia_jogos():
     jogos = []
     canais = []
 
-    # Pega informação do jogo
     for jogoSoap in soup.findAll(class_="inner-post-entry"):
             s = jogoSoap
             for jogo in s.findAll(['h3']):
