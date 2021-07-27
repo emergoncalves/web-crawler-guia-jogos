@@ -17,11 +17,10 @@ def get_guia_jogos():
             for jogo in s.findAll(['h3']):
                 jogos.append( jogo.getText() )
 
-    # Pega informação sobre o canal
     for canalSoap in soup.findAll(class_="inner-post-entry"):
             c = canalSoap
             for canal in c.findAll(['span']):
-                if canal.getText().find('►') != 0:
+                if canal.getText().find('>') != 0:
                  canais.append( canal.getText() )
 
     return [list(x) for x in zip(jogos, canais)]
