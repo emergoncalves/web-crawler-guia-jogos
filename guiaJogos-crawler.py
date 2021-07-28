@@ -1,3 +1,5 @@
+# coding: utf-8
+
 import requests
 import bs4
 import json
@@ -25,7 +27,7 @@ def get_guia_jogos():
     jogos.pop()
     
     #Envia para um arquivo json
-    out_file = open("myfile.json", "w") 
+    out_file = open("/home/wpdevhost/public_html/guia-jogos.json", "w") 
     json.dump(jogos, out_file, indent = 6) 
     out_file.close()
     return jogos
