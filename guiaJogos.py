@@ -22,7 +22,15 @@ def get_guia_jogos():
             for canal in c.findAll(['span']):
                 if canal.getText().find('>') != 0:
                  canais.append( canal.getText() )
+    
+    lista = [list(x) for x in zip(jogos, canais)]
 
-    return [list(x) for x in zip(jogos, canais)]
+    out_file = open("myfile.json", "w") 
+    
+    json.dump(lista, out_file, indent = 6) 
+    
+    out_file.close() 
+
+    return lista
     
 print( get_guia_jogos() )
